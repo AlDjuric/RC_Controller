@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>AFRY RC-Car</h1>
+      </div>
+      <h3>Camera Feed</h3>
+      <div class="camera-feed">
+        <p>FPS: {{ camera_feed_fps }}</p>
+        <!-- Add camera feed here -->
+        <img class="camera-placeholder" src="{{ url_for('static', filename = 'placeholder_camera.bmp') }}" alt="Camera Placeholder" />
+      </div>
+      <div class="status-panel">
+        <div class="system-info">
+          <div>CPU Temp:</div>
+          <div>CPU Usage:</div>
+          <div>RAM Usage:</div>
+        </div>
+        <div id="wifi_status">
+          <h3>WiFi</h3>
+          <div id="signal-quality">Quality: Fair</div>
+          <div id="signal-strength">Signal Strength: -65</div>
+          <span class="tooltip-icon">
+              <img src="{{ url_for('static', filename='tooltip-icon.png') }}" alt="Tooltip Icon" /> 
+              Help
+          </span>
+          <div class="tooltip-content">
+              <p><strong>Color Coding:</strong></p>
+              <p><span class="color-excellent">Green: Excellent (-50 and above)</span></p>
+              <p><span class="color-good">Orange: Good (-60 to -50)</span></p>
+              <p><span class="color-fair">Yellow: Fair (-70 to -60)</span></p>
+              <p><span class="color-poor">Red: Poor (-80 to -70)</span></p>
+              <p><span class="color-weak">Grey: Very Weak (Below -80)</span></p>
+          </div>
+      </div>
+      
+      <div class="arrow-controls">
+        <div class="up-key">
+          <button id="keyboard_key_up" class="movements_control"><img src="{{ url_for('static', filename = 'arrow-up.png') }}" /></button>
+        </div>
+        <div class="middle-keys">
+          <button id="keyboard_key_left" class="movements_control"><img src="{{ url_for('static', filename = 'arrow-left.png') }}" /></button>
+          <button id="keyboard_key_down" class="movements_control"><img src="{{ url_for('static', filename = 'arrow-down.png') }}" /></button>
+          <button id="keyboard_key_right" class="movements_control"><img src="{{ url_for('static', filename = 'arrow-right.png') }}" /></button>
+        </div>
+      </div>
+      <div class="function-buttons">
+        <button id="emergency_button">Emergency</button>
+        <button id="automatic_button">Automatic</button>
+      </div>
+      <div class="range">
+        <div class="range-slider">
+          <label for="range">Select a PWN:</label><br />
+          <input type="range" min="0" max="100" value="0" class="range-input" id="pwmSlider" step="25" />
+          <div class="sliderticks">
+            <span>0</span>
+            <span>25</span>
+            <span>50</span>
+            <span>75</span>
+            <span>100</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="{{ url_for('static', filename = 'controller.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'status_panel.js') }}"></script>
+</html>

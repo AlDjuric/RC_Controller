@@ -1,0 +1,251 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status-panel,
+.controls-panel,
+.sliders,
+.function-buttons {
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+
+.system-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls-panel {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrow-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.middle-keys {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sliders input[type=range] {
+  width: 100%;
+  /* Add styling for sliders */
+}
+
+
+.camera-feed {
+  width: 1000px;
+  height: 500px;
+  background-color: #000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.camera-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  background-color: #333;
+  margin-top: -10px;
+  border: #333 1px solid;
+}
+
+.sliderticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.sliderticks span {
+  display: flex;
+  justify-content: center;
+  width: 1px;
+  height: 10px;
+  background: #d3d3d3;
+  line-height: 40px;
+}
+
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  height: 6px;
+  background: #ccc;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.range-input::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #f50;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
+}
+
+.range-input:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.range-input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.range-input::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255, 85, 0, .1)
+}
+
+.range-input:active::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+.range-input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, .2)
+}
+
+
+.value4 {
+  font-size: 26px;
+  width: 50px;
+  text-align: center;
+}
+
+#wifi_status {
+  border: white solid;
+  width: 30%;
+  height: 50%;
+  background-color: #000;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+
+}
+
+#wifi_status>h3 {
+  padding: 5px 2px 2px 5px;
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+#signal-strength,
+#signal-quality {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tooltip-icon {
+  display: inline-block;
+  margin-top: 10px;
+  padding-top: 10px;
+
+  color: #ccc;
+  /* Light grey color */
+  cursor: help;
+  /* Cursor indicates clickable/hoverable item */
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.tooltip-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  border: 1px solid #ddd;
+  z-index: 1;
+  width: 250px;
+
+
+}
+
+.tooltip-icon:hover+.tooltip-content {
+  display: block;
+}
+
+/* Style for color coding explanations */
+.color-excellent {
+  color: green;
+}
+
+.color-good {
+  color: orange;
+}
+
+.color-fair {
+  color: yellow;
+}
+
+.color-poor {
+  color: red;
+}
+
+.color-weak {
+  color: grey;
+}
